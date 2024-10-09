@@ -6,8 +6,8 @@ from PIL import Image
 from microsoft_login import login
 
 def background_image():
-    background_image = ctk.CTkImage(light_image=Image.open("../assets/images/background.jpg"),
-                                    dark_image=Image.open("../assets/images/background.jpg"),
+    background_image = ctk.CTkImage(light_image=Image.open("../assets/images/cherry-background.jpg"),
+                                    dark_image=Image.open("../assets/images/cherry-background.jpg"),
                                     size=(1920, 1080)
                                     )
     image_label = ctk.CTkLabel(app, image=background_image, text="")
