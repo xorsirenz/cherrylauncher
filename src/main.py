@@ -14,7 +14,7 @@ def background_image():
     image_label.grid(sticky="nsew")
 
 def close_app():
-    print('[!] closing xorlauncher..')
+    print('[!] closing cherrylauncher..')
     sys.exit(0)
 
 def tabs():
@@ -54,7 +54,7 @@ ctk.set_default_color_theme("themes/theme.json")
 app = ctk.CTk()
 app.geometry('1920x1080')
 app.maxsize(1920, 1080)
-app.title('xorlauncher')
+app.title('cherrylauncher')
 app.columnconfigure(0, weight=1)
 app.rowconfigure(0, weight=1)
 
