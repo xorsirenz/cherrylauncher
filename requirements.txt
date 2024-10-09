@@ -1,0 +1,4 @@
+customtkinter
+minecraft_launcher_lib
+pillow
+selenium
