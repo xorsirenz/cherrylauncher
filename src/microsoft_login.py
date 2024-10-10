@@ -15,7 +15,9 @@ def login():
         WebDriverWait(driver, 300).until(
                 EC.url_contains(redirect_url))
     finally:
+        print(driver.current_url)
         code = driver.current_url.split("code=")[1].split("&")[0]
+        print(code)
         driver.quit()
 
         # minecraft launcher
@@ -74,3 +76,4 @@ def login():
         })
         microsoft_token = r.json()["access_token"]
         return username, uuid, microsoft_token
+
