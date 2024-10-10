@@ -92,7 +92,7 @@
   },
   "CTkComboBox": {
     "corner_radius": 6,
-    "border_width": 2,
+    "border_width": 1,
     "fg_color": ["#F9F9FA", "#09121b"],
     "border_color": ["#979DA2", "#565B5E"],
     "button_color": ["#979DA2", "#565B5E"],
