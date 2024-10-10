@@ -8,8 +8,8 @@
   "CTkFrame": {
     "corner_radius": 6,
     "border_width": 0,
-    "fg_color": ["gray86", "gray17"],
-    "top_fg_color": ["gray81", "gray20"],
+    "fg_color": ["#e48c85", "#09121b"],
+    "top_fg_color": ["#09121b", "#09121b"],
     "border_color": ["gray65", "gray28"]
   },
   "CTkButton": {
@@ -93,7 +93,7 @@
   "CTkComboBox": {
     "corner_radius": 6,
     "border_width": 2,
-    "fg_color": ["#F9F9FA", "#343638"],
+    "fg_color": ["#F9F9FA", "#09121b"],
     "border_color": ["#979DA2", "#565B5E"],
     "button_color": ["#979DA2", "#565B5E"],
     "button_hover_color": ["#6E7174", "#7A848D"],
@@ -143,12 +143,12 @@
     },
     "Windows": {
       "family": "Roboto",
-      "size": 13,
+      "size": 24,
       "weight": "normal"
     },
     "Linux": {
       "family": "Roboto",
-      "size": 20,
+      "size": 24,
       "weight": "normal"
     }
   }
