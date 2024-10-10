@@ -182,6 +182,6 @@ class App(ctk.CTk):
 
 
 if __name__ == "__main__":
-    #username, uuid, microsoft_token = login()
+    username, uuid, microsoft_token = login()
     app = App()
     app.mainloop()
