@@ -1,3 +1,3 @@
 #!/usr/bin/env python3
-from src.cherrylauncher import main
-main()
+from src  import cherrylauncher
+cherrylauncher.main()
