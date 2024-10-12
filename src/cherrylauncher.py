@@ -75,7 +75,7 @@ class App(ctk.CTk):
                 command=self.settings_button_event)
         self.settings_button.grid(row=3, column=0, sticky="ew")
 
-        self.minecraft_versions = self.installed_versions()
+        self.installed_minecraft_versions = self.installed_versions()
         self.version_select = ctk.CTkComboBox(
                 self.navigation_frame, 
                 corner_radius=0, 
@@ -85,7 +85,7 @@ class App(ctk.CTk):
                 button_hover_color="#3a4148",
                 border_color="#09121b",
                 font=ctk.CTkFont(size=28),
-                values=self.minecraft_versions)
+                values=self.installed_minecraft_versions)
         self.version_select.grid(row=5, column=0, padx=0, pady=2, sticky="s")
 
         self.launch_button = ctk.CTkButton(
