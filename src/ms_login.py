@@ -3,7 +3,6 @@ from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import minecraft_launcher_lib
-import subprocess
 import sys
 
 REDIRECT_URL = "https://login.live.com/oauth20_desktop.srf"
