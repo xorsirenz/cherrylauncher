@@ -1,10 +1,11 @@
+#!/usr/bin/env python3
 import customtkinter as ctk
 import minecraft_launcher_lib
 import os
 import sys
 import subprocess
 from PIL import Image
-from src.microsoft_login import login
+from src.ms_login import login
 
 class App(ctk.CTk):
     def __init__(self):
@@ -165,12 +166,12 @@ class App(ctk.CTk):
     def launch_minecraft(self):
         self.minecraft_directory = minecraft_launcher_lib.utils.get_minecraft_directory()
         minecraft_launcher_lib.install.install_minecraft_version(self.version_select.get(), self.minecraft_directory)
-        username, uuid, microsoft_token = login()
+        login_data = login()
         
         options = {
-            "username": username,
-            "uuid": uuid,
-            "token": microsoft_token
+            "username": login_data["name"],
+            "uuid": login_data["id"],
+            "token": login_data["access_token"]
             }
         self.minecraft_command = minecraft_launcher_lib.command.get_minecraft_command(self.version_select.get(), self.minecraft_directory, options)
 
