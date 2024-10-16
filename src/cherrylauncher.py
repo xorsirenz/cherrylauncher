@@ -7,9 +7,12 @@ import subprocess
 from PIL import Image
 from src.ms_login import login
 
+
 class App(ctk.CTk):
     def __init__(self):
         super().__init__()
+        
+        self.login_data = login()
     
         self.title("cherrylauncher")
         self.geometry("1920x1080")
@@ -166,19 +169,23 @@ class App(ctk.CTk):
     def launch_minecraft(self):
         self.minecraft_directory = minecraft_launcher_lib.utils.get_minecraft_directory()
         minecraft_launcher_lib.install.install_minecraft_version(self.version_select.get(), self.minecraft_directory)
-        login_data = login()
-        
-        options = {
-            "username": login_data["name"],
-            "uuid": login_data["id"],
-            "token": login_data["access_token"]
-            }
-        self.minecraft_command = minecraft_launcher_lib.command.get_minecraft_command(self.version_select.get(), self.minecraft_directory, options)
+        try:
+            options = {
+                "username": self.login_data["name"],
+                "uuid": self.login_data["id"],
+                "token": self.login_data["access_token"]
+                }
+            self.minecraft_command = minecraft_launcher_lib.command.get_minecraft_command(self.version_select.get(), self.minecraft_directory, options)
 
-        self.withdraw()
-        subprocess.run(self.minecraft_command)
-        self.deiconify()
-        #sys.exit(0)        
+            self.withdraw()
+            subprocess.run(self.minecraft_command)
+            self.deiconify()
+            #sys.exit(0)
+        except AttributeError as e:
+            print(e)
+            self.login_data = login()
+            return self.login_data()
+            
 
     def exit_cherrylauncher(self):
         print("[!] closing cherrylauncher..")
